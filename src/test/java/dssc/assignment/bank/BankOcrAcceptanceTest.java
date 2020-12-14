@@ -14,7 +14,7 @@ public class BankOcrAcceptanceTest {
 
         application.parseFile(Path.of(allZerosSingleEntry.toURI()));
 
-        application.showsAccountNumber("000000004\n");
+        application.showsAccountNumber("000000000\n");
     }
 
     @Test
