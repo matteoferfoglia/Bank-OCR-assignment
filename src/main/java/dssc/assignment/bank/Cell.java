@@ -70,4 +70,8 @@ class Digit {
             " _ " +
             "|_|" +
             " _|";
+
+    private char digitAsChar;
+    private char digitAsString;
+
 }
