@@ -1,56 +1,67 @@
 package dssc.assignment.bank;
 
+import java.util.stream.Stream;
+
 public class Cell {
 
-    private final String cellAsText;
-    private char cellAsChar;
+    private final Digit cellContent;
 
     public Cell(String cellAsText) {
-        this.cellAsText = cellAsText;
+        this.cellContent = Digit.convertCellAsTextToDigit(cellAsText);
+    }
+
+    public Cell(char cellAsChar){
+        this.cellContent = Digit.convertCellAsCharToDigit(cellAsChar);
     }
 
     @Override
     public String toString() {
-        String s;
-        switch (cellAsText){
-            case ZERO_CELL:
-                s = "0";
-                break;
-            case ONE_CELL:
-                s = "1";
-                break;
-            case TWO_CELL:
-                s = "2";
-                break;
-            case THREE_CELL:
-                s = "3";
-                break;
-            case FOUR_CELL:
-                s = "4";
-                break;
-            case FIVE_CELL:
-                s = "5";
-                break;
-            case SIX_CELL:
-                s = "6";
-                break;
-            case SEVEN_CELL:
-                s = "7";
-                break;
-            case EIGHT_CELL:
-                s = "8";
-                break;
-            case NINE_CELL:
-                s = "9";
-                break;
-            default:
-                s = "";
-                break;
-        }
-        return s;
+        return String.valueOf(cellContent.getCellAsChar());
+    }
+}
+
+enum Digit {
+
+    ZERO(Digit.ZERO_CELL, '0'),
+    ONE(Digit.ONE_CELL, '1'),
+    TWO(Digit.TWO_CELL,'2'),
+    THREE(Digit.THREE_CELL, '3'),
+    FOUR(Digit.FOUR_CELL, '4'),
+    FIVE(Digit.FIVE_CELL, '5'),
+    SIX(Digit.SIX_CELL, '6'),
+    SEVEN(Digit.SEVEN_CELL, '7'),
+    EIGHT(Digit.EIGHT_CELL, '8'),
+    NINE(Digit.NINE_CELL, '9');
+
+    private final String cellAsString;
+    private final char cellAsChar;
+
+    Digit(String cellAsString, char cellAsChar) {
+        this.cellAsChar = cellAsChar;
+        this.cellAsString = cellAsString;
     }
 
+    public static Digit convertCellAsTextToDigit(String cellAsString) {
 
+        return Stream.of(Digit.values())
+                .filter( x -> x.cellAsString.equals(cellAsString ))
+                .findAny()
+                .orElseThrow();
+
+    }
+
+    public static Digit convertCellAsCharToDigit(char cellAsChar) {
+
+        return Stream.of(Digit.values())
+                .filter( x -> x.cellAsChar==cellAsChar )
+                .findAny()
+                .orElseThrow();
+
+    }
+
+    public char getCellAsChar() {
+        return cellAsChar;
+    }
 
     public static final String ZERO_CELL =
             " _ " +
@@ -92,4 +103,5 @@ public class Cell {
             " _ " +
             "|_|" +
             " _|";
+
 }
