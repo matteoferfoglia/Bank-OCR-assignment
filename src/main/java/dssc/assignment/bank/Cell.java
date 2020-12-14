@@ -17,3 +17,12 @@ public class Cell {
         return ZERO_CELL.equals(cellAsText) ? "0": "1";
     }
 }
+
+class Digit {
+
+    private static final String ZERO_CELL =
+            " _ " +
+            "| |" +
+            "|_|";
+
+}
