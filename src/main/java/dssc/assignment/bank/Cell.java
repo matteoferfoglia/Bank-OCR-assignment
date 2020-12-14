@@ -6,7 +6,7 @@ public class Cell {
                     " _ " +
                     "| |" +
                     "|_|";
-    private String cellAsText;
+    private final String cellAsText;
 
     public Cell(String cellAsText) {
         this.cellAsText = cellAsText;
@@ -14,7 +14,17 @@ public class Cell {
 
     @Override
     public String toString() {
-        return ZERO_CELL.equals(cellAsText) ? "0": "1";
+        //return ZERO_CELL.equals(cellAsText) ? "0": "1";
+        String s;
+        switch (cellAsText){
+            case ZERO_CELL:
+                s = "0";
+                break;
+            default:
+                s = "1";
+                break;
+        }
+        return s;
     }
 }
 
@@ -23,7 +33,43 @@ class Digit {
     private static final String ZERO_CELL =
             " _ " +
             "| |" +
-            "|_|" ;
+            "|_|";
+    private static final String ONE_CELL =
+            "  |" +
+            "  |" +
+            "  |";
+    private static final String TWO_CELL =
+            " _ " +
+            " _|" +
+            "|_ ";
+    private static final String THREE_CELL =
+            " _ " +
+            " _|" +
+            " _|";
+    private static final String FOUR_CELL =
+            "   " +
+            "|_|" +
+            "  |";
+    private static final String FIVE_CELL =
+            " _ " +
+            "|_ " +
+            " _|";
+    private static final String SIX_CELL =
+            " _ " +
+            "|_ " +
+            "|_|";
+    private static final String SEVEN_CELL =
+            " _ " +
+            "  |" +
+            "  |";
+    private static final String EIGHT_CELL =
+            " _ " +
+            "|_|" +
+            "|_|";
+    private static final String NINE_CELL =
+            " _ " +
+            "|_|" +
+            " _|";
 
     private char digitAsChar;
     private char digitAsString;
