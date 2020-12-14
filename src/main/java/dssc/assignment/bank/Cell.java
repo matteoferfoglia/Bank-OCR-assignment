@@ -69,5 +69,5 @@ class Digit {
     private static final String NINE_CELL =
             " _ " +
             "|_|" +
-            "  |";
+            " _|";
 }
