@@ -6,7 +6,7 @@ public class Cell {
                     " _ " +
                     "| |" +
                     "|_|";
-    private String cellAsText;
+    private final String cellAsText;
 
     public Cell(String cellAsText) {
         this.cellAsText = cellAsText;
@@ -14,7 +14,17 @@ public class Cell {
 
     @Override
     public String toString() {
-        return ZERO_CELL.equals(cellAsText) ? "0": "1";
+        //return ZERO_CELL.equals(cellAsText) ? "0": "1";
+        String s;
+        switch (cellAsText){
+            case ZERO_CELL:
+                s = "0";
+                break;
+            default:
+                s = "1";
+                break;
+        }
+        return s;
     }
 }
 
