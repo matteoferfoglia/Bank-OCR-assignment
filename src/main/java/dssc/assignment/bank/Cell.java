@@ -35,7 +35,7 @@ class Digit {
             "| |" +
             "|_|";
     private static final String ONE_CELL =
-            "  |" +
+            "   " +
             "  |" +
             "  |";
     private static final String TWO_CELL =
