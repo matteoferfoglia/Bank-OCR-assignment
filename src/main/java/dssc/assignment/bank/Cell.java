@@ -16,8 +16,35 @@ public class Cell {
             case ZERO_CELL:
                 s = "0";
                 break;
-            default:
+            case ONE_CELL:
                 s = "1";
+                break;
+            case TWO_CELL:
+                s = "2";
+                break;
+            case THREE_CELL:
+                s = "3";
+                break;
+            case FOUR_CELL:
+                s = "4";
+                break;
+            case FIVE_CELL:
+                s = "5";
+                break;
+            case SIX_CELL:
+                s = "6";
+                break;
+            case SEVEN_CELL:
+                s = "7";
+                break;
+            case EIGHT_CELL:
+                s = "8";
+                break;
+            case NINE_CELL:
+                s = "9";
+                break;
+            default:
+                s = "";
                 break;
         }
         return s;
