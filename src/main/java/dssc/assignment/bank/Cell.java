@@ -23,6 +23,9 @@ class Digit {
     private static final String ZERO_CELL =
             " _ " +
             "| |" +
-            "|_|";
+            "|_|" ;
+
+    private char digitAsChar;
+    private char digitAsString;
 
 }
