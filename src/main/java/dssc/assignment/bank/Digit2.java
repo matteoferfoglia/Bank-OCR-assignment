@@ -8,6 +8,12 @@ public class Digit2 {
     final String digitText;
 
     Digit2(char digitChar) {
+        InitMap();
+        this.digitChar = digitChar;
+        digitText = convertToText(digitChar);
+    }
+
+    private void InitMap() {
         if (map.isEmpty()) {
             map.put('0', ZERO_CELL);
             map.put('1', ONE_CELL);
@@ -20,9 +26,6 @@ public class Digit2 {
             map.put('8', EIGHT_CELL);
             map.put('9', NINE_CELL);
         }
-
-        this.digitChar = digitChar;
-        digitText = convertToText(digitChar);
     }
 
     public char getChar() {
